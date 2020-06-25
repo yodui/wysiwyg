@@ -1,0 +1,69 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:700,400" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="jquery/jquery-1.8.3.min.js?v5.9"></script>
+    <script type="text/javascript" src="jquery/jquery-ui.min.js?v5.9"></script>
+    <script type="text/javascript" src="jquery/jquery.cookie.js?v5.9"></script>
+
+    <script src="editor/redactor.js" type="text/javascript"></script>
+    <link href="editor/redactor.css" rel="stylesheet" type="text/css">
+    <title>wysiwyg</title>
+    <script type="text/javascript">
+
+        var PATH = "/";
+        var PATH_STYLES = "/data/css/";
+        var PATH_JS = "/data/js/";
+        var HTTP_ORIGINAL_PATH = "sp/adm/edit/227";
+
+    </script>
+</head>
+<body>
+<div class="cms">
+
+    <form name="addPage" class="form pt" method="post" action="" enctype="multipart/form-data">
+
+        <div id="text" style="min-height: 200px; max-height: 1000px;">
+        </div>
+
+        <script type="text/javascript">
+            $(function() {
+
+                $('#text').redactor({
+                    formattingAdd: {
+                        "code": {
+                            title: 'code',
+                            tag: 'code'
+                        }
+                    },
+                    minHeight: 200,
+                    // image fields
+                    imageUpload: PATH+'upload',
+                    imageUploadParam: 'uploadFile',
+                    uploadImageFields: {
+                        'cat':'news',
+                        'type':'image'
+                    },
+                    fileUpload: PATH+'upload',
+                    fileUploadParam: 'uploadFile',
+                    uploadFileFields: {
+                        'cat':'news',
+                        'type':'file'
+                    },
+                    autosave: PATH+'autosave',
+                    autosaveName: 'text',
+                    autosaveFields: {
+                        'id_page': 227
+                    }
+                });
+            });
+        </script>
+
+    </form>
+
+</div>
+
+</body>
+</html>
